@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.sass'],
 })
 export class NavbarComponent implements OnInit {
+  search: string = '';
+
   constructor() {}
 
   ngOnInit(): void {}
