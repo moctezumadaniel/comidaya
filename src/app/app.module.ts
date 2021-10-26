@@ -11,9 +11,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { RecipePreviewComponent } from './recipe-preview/recipe-preview.component';
+import { MealPreviewComponent } from './meal-preview/meal-preview.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, MainMenuComponent, RecipePreviewComponent],
+  declarations: [AppComponent, NavbarComponent, MainMenuComponent, RecipePreviewComponent, MealPreviewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
