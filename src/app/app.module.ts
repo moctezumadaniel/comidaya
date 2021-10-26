@@ -9,9 +9,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, MainMenuComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
