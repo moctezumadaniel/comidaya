@@ -10,9 +10,10 @@ import { environment } from '../environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { RecipePreviewComponent } from './recipe-preview/recipe-preview.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, MainMenuComponent],
+  declarations: [AppComponent, NavbarComponent, MainMenuComponent, RecipePreviewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
