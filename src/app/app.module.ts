@@ -12,9 +12,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { RecipePreviewComponent } from './recipe-preview/recipe-preview.component';
 import { MealPreviewComponent } from './meal-preview/meal-preview.component';
+import { MealComponent } from './meal/meal.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, MainMenuComponent, RecipePreviewComponent, MealPreviewComponent],
+  declarations: [AppComponent, NavbarComponent, MainMenuComponent, RecipePreviewComponent, MealPreviewComponent, MealComponent, RecipeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
