@@ -16,9 +16,12 @@ import { MealComponent } from './meal/meal.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { NewMealComponent } from './new-meal/new-meal.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { FavoriteMealsComponent } from './favorite-meals/favorite-meals.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, MainMenuComponent, RecipePreviewComponent, MealPreviewComponent, MealComponent, RecipeComponent, NewRecipeComponent, NewMealComponent],
+  declarations: [AppComponent, NavbarComponent, MainMenuComponent, RecipePreviewComponent, MealPreviewComponent, MealComponent, RecipeComponent, NewRecipeComponent, NewMealComponent, ProfileComponent, RecipeListComponent, FavoriteMealsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
