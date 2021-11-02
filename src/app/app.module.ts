@@ -35,6 +35,7 @@ const appRoutes: Routes = [
   { path: 'comidas', component: MealListComponent },
   { path: 'comidas-favoritas', component: FavoriteMealsComponent },
   { path: 'perfil', component: ProfileComponent },
+  { path: 'menu', component: MainMenuComponent },
 ];
 @NgModule({
   declarations: [
