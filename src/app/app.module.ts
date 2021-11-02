@@ -20,14 +20,21 @@ import { ProfileComponent } from './profile/profile.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { FavoriteMealsComponent } from './favorite-meals/favorite-meals.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MealListComponent } from './meal-list/meal-list.component';
+import { FavoriteRecipesComponent } from './favorite-recipes/favorite-recipes.component';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
 
 const appRoutes: Routes = [
+  { path: '', component: RecommendationsComponent },
   { path: 'nueva-receta', component: NewRecipeComponent },
   { path: 'receta', component: RecipeComponent },
   { path: 'recetas', component: RecipeListComponent },
+  { path: 'recetas-favoritas', component: FavoriteRecipesComponent },
   { path: 'nueva-comida', component: NewMealComponent },
   { path: 'comida', component: MealComponent },
+  { path: 'comidas', component: MealListComponent },
   { path: 'comidas-favoritas', component: FavoriteMealsComponent },
+  { path: 'perfil', component: ProfileComponent },
 ];
 @NgModule({
   declarations: [
@@ -43,6 +50,9 @@ const appRoutes: Routes = [
     ProfileComponent,
     RecipeListComponent,
     FavoriteMealsComponent,
+    MealListComponent,
+    FavoriteRecipesComponent,
+    RecommendationsComponent,
   ],
   imports: [
     BrowserModule,
