@@ -23,6 +23,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MealListComponent } from './meal-list/meal-list.component';
 import { FavoriteRecipesComponent } from './favorite-recipes/favorite-recipes.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
+import { StoreModule } from '@ngrx/store';
+import { navbarReducer } from 'src/redux/reducers/navbar.reducer';
 
 const appRoutes: Routes = [
   { path: '', component: RecommendationsComponent },
@@ -61,6 +63,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
+    StoreModule.forRoot({ navbar: navbarReducer }),
     RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
