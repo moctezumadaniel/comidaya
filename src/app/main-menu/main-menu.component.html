@@ -1,12 +1,12 @@
 <div class="MainMenuContainer">
   <div class="MainMenu">
     <div class="MainMenuHeader">
-      <button class="MenuButton">
+      <button class="MenuButton" (click)="closeMenu()">
         <mat-icon class="MenuButtonIcon">close</mat-icon>
       </button>
       <a class="Logo">ComidaYa</a>
     </div>
-    <ul class="Routes">
+    <ul class="Routes" (click)="closeMenu()">
       <li class="Route">
         <a routerLink="/nueva-receta">Nueva receta</a>
       </li>
@@ -30,5 +30,5 @@
       </li>
     </ul>
   </div>
-  <div class="MainMenuBackground"></div>
+  <div class="MainMenuBackground" (click)="closeMenu()"></div>
 </div>

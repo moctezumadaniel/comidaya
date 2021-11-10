@@ -23,7 +23,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
   openMenu() {
     this.mainMenu.openMenu();
-    console.log('Menu clicked');
   }
   changeSearch() {
     this.store.dispatch(changeMainSearch(this));

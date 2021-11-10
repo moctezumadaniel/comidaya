@@ -8,7 +8,6 @@ export class MainMenuService {
 
   openMenu() {
     this.status = 'opened';
-    console.log('estatus del menu cambiado a ' + this.status);
   }
 
   closeMenu() {
