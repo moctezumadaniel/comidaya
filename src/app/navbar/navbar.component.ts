@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { changeMainSearch } from '../../redux/actions/navbar.actions';
 import { MainMenuService } from '../services/mainMenu.service';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,21 +10,22 @@ import { MainMenuService } from '../services/mainMenu.service';
   styleUrls: ['./navbar.component.sass'],
 })
 export class NavbarComponent implements OnInit {
-  search = '';
-  navbar$: Observable<any>;
-
+  search: string = '';
   constructor(
     private store: Store<{ navbar: { search: String } }>,
-    private mainMenu: MainMenuService
-  ) {
-    this.navbar$ = this.store.select('navbar');
+    private mainMenuService: MainMenuService,
+    private searchService: SearchService
+  ) {}
+  ngOnInit() {
+    this.search = this.searchService.search;
   }
-
-  ngOnInit(): void {}
   openMenu() {
-    this.mainMenu.openMenu();
+    this.mainMenuService.openMenu();
   }
-  changeSearch() {
-    this.store.dispatch(changeMainSearch(this));
+  changeSearch(event: any) {
+    this.searchService.updateSearch(event.target.value);
+  }
+  logSearch() {
+    console.log(this.searchService.search);
   }
 }

@@ -8,8 +8,13 @@
   </div>
 
   <div class="SearchContainer">
-    <input class="Search" type="search" [(ngModel)]="search" />
-    <!-- <button>
+    <input
+      class="Search"
+      type="search"
+      (change)="changeSearch($event)"
+      (search)="logSearch()"
+    />
+    <!-- <button (click)="logSearch()">
       <mat-icon></mat-icon>
     </button> -->
   </div>
