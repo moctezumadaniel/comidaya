@@ -6,7 +6,10 @@
   </div>
   <div>
     <div class="Name">Nombre de la receta</div>
-    <textarea class="Description"></textarea>
+    <textarea
+      class="Description"
+      (change)="changeRecipeName($event)"
+    ></textarea>
   </div>
 
   <div>
@@ -16,18 +19,30 @@
       <div class="Ingredients">Ingrediente</div>
       <div class="Ingredients">Ingrediente</div>
       <div class="NewIngredientContainer">
-        <input type="text" class="NewIngredient" />
-        <input type="submit" class="SubmitNewIngredient" value="Agregar" />
+        <input
+          type="text"
+          class="NewIngredient"
+          (change)="changeNewIngredient($event)"
+        />
+        <input
+          type="submit"
+          class="SubmitNewIngredient"
+          value="Agregar"
+          (click)="addIngredient()"
+        />
       </div>
     </form>
   </div>
 
   <div>
     <div class="Title">Instrucciones</div>
-    <textarea class="Instructions"></textarea>
+    <textarea
+      class="Instructions"
+      (change)="changeInstructions($event)"
+    ></textarea>
   </div>
 
   <div class="SaveRecipeContainer">
-    <button class="SaveRecipe">Publicar Receta</button>
+    <button class="SaveRecipe" (click)="saveRecipe()">Publicar Receta</button>
   </div>
 </div>
