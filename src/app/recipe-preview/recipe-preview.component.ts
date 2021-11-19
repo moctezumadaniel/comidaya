@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-recipe-preview',
   templateUrl: './recipe-preview.component.html',
-  styleUrls: ['./recipe-preview.component.sass']
+  styleUrls: ['./recipe-preview.component.sass'],
 })
 export class RecipePreviewComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
