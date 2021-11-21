@@ -35,11 +35,19 @@ const appRoutes: Routes = [
   { path: 'receta', component: RecipeComponent },
   { path: 'recetas', component: RecipeListComponent },
   { path: 'recetas-favoritas', component: FavoriteRecipesComponent },
-  { path: 'nueva-comida', component: NewMealComponent },
+  {
+    path: 'nueva-comida',
+    loadChildren: () =>
+      import('./new-meal/new-meal.module').then((m) => m.NewMealModule),
+  },
   { path: 'comida', component: MealComponent },
   { path: 'comidas', component: MealListComponent },
   { path: 'comidas-favoritas', component: FavoriteMealsComponent },
-  { path: 'perfil', component: ProfileComponent },
+  {
+    path: 'perfil',
+    loadChildren: () =>
+      import('./profile/profile.module').then((m) => m.ProfileModule),
+  },
   { path: 'menu', component: MainMenuComponent },
 ];
 @NgModule({
@@ -51,8 +59,6 @@ const appRoutes: Routes = [
     MealPreviewComponent,
     MealComponent,
     RecipeComponent,
-    NewMealComponent,
-    ProfileComponent,
     RecipeListComponent,
     FavoriteMealsComponent,
     MealListComponent,
