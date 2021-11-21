@@ -14,12 +14,11 @@ import { RecipePreviewComponent } from './recipe-preview/recipe-preview.componen
 import { MealPreviewComponent } from './meal-preview/meal-preview.component';
 import { MealComponent } from './meal/meal.component';
 import { RecipeComponent } from './recipe/recipe.component';
-import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { NewMealComponent } from './new-meal/new-meal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { FavoriteMealsComponent } from './favorite-meals/favorite-meals.component';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MealListComponent } from './meal-list/meal-list.component';
 import { FavoriteRecipesComponent } from './favorite-recipes/favorite-recipes.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
@@ -28,7 +27,11 @@ import { navbarReducer } from 'src/redux/reducers/navbar.reducer';
 
 const appRoutes: Routes = [
   { path: '', component: RecommendationsComponent },
-  { path: 'nueva-receta', component: NewRecipeComponent },
+  {
+    path: 'nueva-receta',
+    loadChildren: () =>
+      import('./new-recipe/new-recipe.module').then((m) => m.NewRecipeModule),
+  },
   { path: 'receta', component: RecipeComponent },
   { path: 'recetas', component: RecipeListComponent },
   { path: 'recetas-favoritas', component: FavoriteRecipesComponent },
@@ -48,7 +51,6 @@ const appRoutes: Routes = [
     MealPreviewComponent,
     MealComponent,
     RecipeComponent,
-    NewRecipeComponent,
     NewMealComponent,
     ProfileComponent,
     RecipeListComponent,
@@ -64,7 +66,7 @@ const appRoutes: Routes = [
     MatIconModule,
     FormsModule,
     StoreModule.forRoot({ navbar: navbarReducer }),
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
