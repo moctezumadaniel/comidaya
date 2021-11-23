@@ -1,62 +1,77 @@
 <div>
   <div class="MainTitle">Perfil y Configuración</div>
   <div class="ProfileContainer">
-    <div class="Title">Nombre</div>
-    <label>
-      <input class="Name" type="text" name="userName" [(ngModel)]="userName" />
-    </label>
+    <div class="SectionContainer">
+      <div class="Title">Nombre</div>
+      <label>
+        <input
+          class="Name"
+          type="text"
+          name="userName"
+          [(ngModel)]="userName"
+        />
+      </label>
 
-    <div class="Title">Dirección de entrega</div>
-    <label>
-      <textarea class="Address" name="address" [(ngModel)]="address"></textarea>
-    </label>
+      <div class="Title">Dirección de entrega</div>
+      <label>
+        <textarea
+          class="Address"
+          name="address"
+          [(ngModel)]="address"
+        ></textarea>
+      </label>
+    </div>
 
-    <div class="Title">Nombre comercial</div>
-    <label>
+    <div class="SectionContainer">
+      <div class="Title">Nombre comercial</div>
+      <label>
+        <input
+          class="Name"
+          type="text"
+          name="tradename"
+          [(ngModel)]="tradename"
+        />
+      </label>
+
+      <div class="Title">Dirección comercial</div>
+      <label>
+        <textarea
+          class="Address"
+          name="businessAddress"
+          [(ngModel)]="businessAddress"
+        ></textarea>
+      </label>
+    </div>
+
+    <div class="SectionContainer">
+      <div class="Title">Cambiar contraseña</div>
       <input
-        class="Name"
-        type="text"
-        name="tradename"
-        [(ngModel)]="tradename"
+        placeholder="Contraseña anterior"
+        class="Password"
+        type="password"
+        name="oldPassword"
+        [(ngModel)]="oldPassword"
       />
-    </label>
-
-    <div class="Title">Dirección comercial</div>
-    <label>
-      <textarea
-        class="Address"
-        name="businessAddress"
-        [(ngModel)]="businessAddress"
-      ></textarea>
-    </label>
-
-    <div class="Title">Cambiar contraseña</div>
-    <input
-      placeholder="Contraseña anterior"
-      class="Password"
-      type="password"
-      name="oldPassword"
-      [(ngModel)]="oldPassword"
-    />
-    <input
-      placeholder="Nueva contraseña"
-      class="Password"
-      type="password"
-      name="newPassword"
-      [(ngModel)]="newPassword"
-    />
-    <input
-      placeholder="Confirmar nueva contraseña"
-      class="Password"
-      type="password"
-      name="confirmNewPassword"
-      [(ngModel)]="confirmNewPassword"
-    />
-    <input
-      type="submit"
-      name="changePassword"
-      value="Cambiar"
-      class="ChangePasswordButton"
-    />
+      <input
+        placeholder="Nueva contraseña"
+        class="Password"
+        type="password"
+        name="newPassword"
+        [(ngModel)]="newPassword"
+      />
+      <input
+        placeholder="Confirmar nueva contraseña"
+        class="Password"
+        type="password"
+        name="confirmNewPassword"
+        [(ngModel)]="confirmNewPassword"
+      />
+      <input
+        type="submit"
+        name="changePassword"
+        value="Cambiar"
+        class="ChangePasswordButton"
+      />
+    </div>
   </div>
 </div>
