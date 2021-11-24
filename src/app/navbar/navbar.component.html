@@ -1,5 +1,5 @@
 <nav class="NavbarContainer">
-  <div>
+  <div class="MainButtonsContainer">
     <button class="MenuButton" (click)="openMenu()">
       <mat-icon class="MenuButtonIcon">menu</mat-icon>
     </button>
@@ -11,6 +11,7 @@
     <input
       class="Search"
       type="search"
+      placeholder="Buscar recetas o comidas"
       (change)="changeSearch($event)"
       (search)="logSearch()"
     />
