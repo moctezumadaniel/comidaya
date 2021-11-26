@@ -8,6 +8,9 @@ import { NewRecipeService } from '../services/new-recipe.service';
 })
 export class NewRecipeComponent implements OnInit {
   constructor(private newRecipeService: NewRecipeService) {}
+  recipeNamePlaceholder: string = 'Escribe el nombre de tu receta';
+  newIngredientPlaceholder: string = 'Escribe un nuevo ingrediente';
+  instructionsPlaceholder: string = 'Escribe las instrucciones de la receta';
   changeImages() {
     console.log('Cambio de images');
   }

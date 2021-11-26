@@ -11,6 +11,7 @@
       <textarea
         class="Description"
         (change)="changeRecipeName($event)"
+        [placeholder]="recipeNamePlaceholder"
       ></textarea>
     </div>
 
@@ -25,6 +26,7 @@
             type="text"
             class="NewIngredient"
             (change)="changeNewIngredient($event)"
+            [placeholder]="newIngredientPlaceholder"
           />
           <input
             type="submit"
@@ -41,6 +43,7 @@
       <textarea
         class="Instructions"
         (change)="changeInstructions($event)"
+        [placeholder]="instructionsPlaceholder"
       ></textarea>
     </div>
 

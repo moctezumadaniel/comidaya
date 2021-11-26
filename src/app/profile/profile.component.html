@@ -9,6 +9,7 @@
           type="text"
           name="userName"
           [(ngModel)]="userName"
+          [placeholder]="userNamePlaceholder"
         />
       </label>
 
@@ -18,6 +19,7 @@
           class="Address"
           name="address"
           [(ngModel)]="address"
+          [placeholder]="addressPlaceholder"
         ></textarea>
       </label>
     </div>
@@ -30,6 +32,7 @@
           type="text"
           name="tradename"
           [(ngModel)]="tradename"
+          [placeholder]="tradenamePlaceholder"
         />
       </label>
 
@@ -39,6 +42,7 @@
           class="Address"
           name="businessAddress"
           [(ngModel)]="businessAddress"
+          [placeholder]="businessAddressPlaceholder"
         ></textarea>
       </label>
     </div>
@@ -46,21 +50,21 @@
     <div class="SectionContainer">
       <div class="Title">Cambiar contraseña</div>
       <input
-        placeholder="Contraseña anterior"
+        [placeholder]="oldPasswordPlaceholder"
         class="Password"
         type="password"
         name="oldPassword"
         [(ngModel)]="oldPassword"
       />
       <input
-        placeholder="Nueva contraseña"
+        [placeholder]="newPasswordPlaceholder"
         class="Password"
         type="password"
         name="newPassword"
         [(ngModel)]="newPassword"
       />
       <input
-        placeholder="Confirmar nueva contraseña"
+        [placeholder]="confirmNewPasswordPlaceholder"
         class="Password"
         type="password"
         name="confirmNewPassword"

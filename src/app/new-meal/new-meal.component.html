@@ -9,7 +9,10 @@
     </div>
     <div>
       <div class="Name">Nombre de la comida</div>
-      <textarea class="Description"></textarea>
+      <textarea
+        class="Description"
+        [placeholder]="mealNamePlaceholder"
+      ></textarea>
     </div>
 
     <div>
@@ -19,7 +22,11 @@
         <div class="Detail">Detalle2</div>
         <div class="Detail">Detalle3</div>
         <div class="NewIngredientContainer">
-          <input type="text" class="NewDetail" />
+          <input
+            type="text"
+            class="NewDetail"
+            [placeholder]="newDetailPlaceholder"
+          />
           <input type="submit" class="SubmitNewDetail" value="Agregar" />
         </div>
       </form>
@@ -27,7 +34,11 @@
 
     <div class="Title">Número máximo por día</div>
     <div class="MaxMealContainer">
-      <input class="MaxMeals" type="number" />
+      <input
+        class="MaxMeals"
+        type="number"
+        [placeholder]="maximumAmounthPlaceholder"
+      />
       <input type="submit" class="SubmitNewDetail" value="Guardar" />
     </div>
 
