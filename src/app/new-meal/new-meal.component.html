@@ -11,6 +11,8 @@
       <div class="Name">Nombre de la comida</div>
       <textarea
         class="Description"
+        name="foodName"
+        (change)="updateInformation($event)"
         [placeholder]="mealNamePlaceholder"
       ></textarea>
     </div>
@@ -25,6 +27,8 @@
           <input
             type="text"
             class="NewDetail"
+            name="newDetail"
+            (change)="updateInformation($event)"
             [placeholder]="newDetailPlaceholder"
           />
           <input type="submit" class="SubmitNewDetail" value="Agregar" />
@@ -37,6 +41,8 @@
       <input
         class="MaxMeals"
         type="number"
+        name="maxMeals"
+        (change)="updateInformation($event)"
         [placeholder]="maximumAmounthPlaceholder"
       />
       <input type="submit" class="SubmitNewDetail" value="Guardar" />
