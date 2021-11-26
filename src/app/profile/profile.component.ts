@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,14 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.sass'],
 })
 export class ProfileComponent implements OnInit {
-  userName: string = '';
-  address: string = '';
-  tradename: string = '';
-  businessAddress: string = '';
-  oldPassword: string = '';
-  password: string = '';
-  newPassword: string = '';
-  confirmNewPassword: string = '';
+  constructor(public profileService: ProfileService) {}
 
   userNamePlaceholder: string = 'Nombre que utilizaras como cliente';
   addressPlaceholder: string = 'Dirección donde recibiras tu comida';
@@ -23,7 +17,16 @@ export class ProfileComponent implements OnInit {
   newPasswordPlaceholder: string = 'Nueva contrasela';
   confirmNewPasswordPlaceholder: string = 'Confirmar nueva contraseña';
 
-  constructor() {}
+  userName: string = '';
+  address: string = '';
+  tradename: string = '';
+  businessAddress: string = '';
+  oldPassword: string = '';
+  newPassword: string = '';
+  confirmNewPassword: string = '';
+  changeValue(event: any) {
+    this.profileService.updateValue(event.target.name, event.target.value);
+  }
 
   ngOnInit(): void {}
 }

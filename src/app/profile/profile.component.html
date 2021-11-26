@@ -8,8 +8,9 @@
           class="Name"
           type="text"
           name="userName"
-          [(ngModel)]="userName"
           [placeholder]="userNamePlaceholder"
+          (change)="changeValue($event)"
+          [value]="profileService.userName"
         />
       </label>
 
@@ -18,8 +19,9 @@
         <textarea
           class="Address"
           name="address"
-          [(ngModel)]="address"
           [placeholder]="addressPlaceholder"
+          (change)="changeValue($event)"
+          [value]="profileService.address"
         ></textarea>
       </label>
     </div>
@@ -31,8 +33,9 @@
           class="Name"
           type="text"
           name="tradename"
-          [(ngModel)]="tradename"
           [placeholder]="tradenamePlaceholder"
+          (change)="changeValue($event)"
+          [value]="profileService.tradename"
         />
       </label>
 
@@ -41,8 +44,9 @@
         <textarea
           class="Address"
           name="businessAddress"
-          [(ngModel)]="businessAddress"
           [placeholder]="businessAddressPlaceholder"
+          (change)="changeValue($event)"
+          [value]="profileService.userName"
         ></textarea>
       </label>
     </div>
@@ -54,21 +58,24 @@
         class="Password"
         type="password"
         name="oldPassword"
-        [(ngModel)]="oldPassword"
+        (change)="changeValue($event)"
+        [value]="profileService.oldPassword"
       />
       <input
         [placeholder]="newPasswordPlaceholder"
         class="Password"
         type="password"
         name="newPassword"
-        [(ngModel)]="newPassword"
+        (change)="changeValue($event)"
+        [value]="profileService.newPassword"
       />
       <input
         [placeholder]="confirmNewPasswordPlaceholder"
         class="Password"
         type="password"
         name="confirmNewPassword"
-        [(ngModel)]="confirmNewPassword"
+        (change)="changeValue($event)"
+        [value]="profileService.confirmNewPassword"
       />
       <input
         type="submit"
