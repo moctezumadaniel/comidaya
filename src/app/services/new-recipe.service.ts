@@ -18,11 +18,27 @@ export class NewRecipeService {
   addIngredient() {
     this.ingredients.push(this.newIngredient);
     this.newIngredient = '';
+    console.log(this);
   }
   changeNewIngredient(event: any) {
     this.newIngredient = event.target.value;
   }
+  deleteIngredient(event: any) {
+    const key = event.target.id;
+    if (this.ingredients.length > 1) {
+      this.ingredients.splice(key, 1);
+    } else {
+      this.ingredients = [];
+    }
+    console.log(this);
+  }
+
+  changeIngredient(event: any) {
+    const key = event.target.id;
+    this.ingredients[key] = event.target.value;
+  }
   changeInstructions(event: any) {
     this.instructions = event.target.value;
+    console.log(this);
   }
 }

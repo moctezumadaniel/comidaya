@@ -7,7 +7,7 @@ import { NewRecipeService } from '../services/new-recipe.service';
   styleUrls: ['./new-recipe.component.sass'],
 })
 export class NewRecipeComponent implements OnInit {
-  constructor(private newRecipeService: NewRecipeService) {}
+  constructor(public newRecipeService: NewRecipeService) {}
   recipeNamePlaceholder: string = 'Escribe el nombre de tu receta';
   newIngredientPlaceholder: string = 'Escribe un nuevo ingrediente';
   instructionsPlaceholder: string = 'Escribe las instrucciones de la receta';
@@ -23,11 +23,19 @@ export class NewRecipeComponent implements OnInit {
   changeNewIngredient(event: any) {
     this.newRecipeService.changeNewIngredient(event);
   }
+  deleteIngredient(event: any) {
+    this.newRecipeService.deleteIngredient(event);
+  }
+  changeIngredient(event: any) {
+    this.newRecipeService.changeIngredient(event);
+  }
   changeInstructions(event: any) {
     this.newRecipeService.changeInstructions(event);
   }
   saveRecipe() {
     console.log('Receta guardada');
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.newRecipeService);
+  }
 }
