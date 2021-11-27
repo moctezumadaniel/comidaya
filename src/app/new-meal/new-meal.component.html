@@ -12,6 +12,7 @@
       <textarea
         class="Description"
         name="foodName"
+        [value]="newMealService.foodName"
         (change)="updateInformation($event)"
         [placeholder]="mealNamePlaceholder"
       ></textarea>
