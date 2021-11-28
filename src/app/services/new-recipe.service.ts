@@ -16,9 +16,10 @@ export class NewRecipeService {
     this.recipeName = event.target.value;
   }
   addIngredient() {
-    this.ingredients.push(this.newIngredient);
-    this.newIngredient = '';
-    console.log(this);
+    if (this.newIngredient !== '') {
+      this.ingredients.push(this.newIngredient);
+      this.newIngredient = '';
+    }
   }
   changeNewIngredient(event: any) {
     this.newIngredient = event.target.value;
