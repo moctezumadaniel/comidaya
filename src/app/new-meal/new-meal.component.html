@@ -21,18 +21,41 @@
     <div>
       <div class="Title">Detalles</div>
       <form class="Ingredients">
-        <div class="Detail">Detalle1</div>
-        <div class="Detail">Detalle2</div>
-        <div class="Detail">Detalle3</div>
+        <div
+          class="NewIngredientContainer"
+          *ngFor="let detail of newMealService.details; let i = index"
+        >
+          <input
+            type="text"
+            class="NewDetail"
+            name="newDetailAdded"
+            [value]="newMealService.details[i]"
+            (change)="updateInformation($event)"
+            [placeholder]="newDetailPlaceholder"
+          />
+          <input
+            [id]="i"
+            type="button"
+            class="SubmitNewDetail"
+            value="Borrar"
+          />
+        </div>
         <div class="NewIngredientContainer">
           <input
             type="text"
             class="NewDetail"
             name="newDetail"
+            [value]="newMealService.newDetail"
             (change)="updateInformation($event)"
             [placeholder]="newDetailPlaceholder"
           />
-          <input type="submit" class="SubmitNewDetail" value="Agregar" />
+          <input
+            type="button"
+            class="SubmitNewDetail"
+            value="Agregar"
+            name="addDetail"
+            (click)="updateInformation($event)"
+          />
         </div>
       </form>
     </div>

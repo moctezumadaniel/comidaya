@@ -10,7 +10,9 @@ export class NewMealService {
   newDetail: string = '';
   maxMeals: string = '';
 
-  updateInformation(name: string, value: string) {
+  updateInformation(event: any) {
+    const name = event.target.name;
+    const value = event.target.value;
     switch (name) {
       case 'foodName':
         this.foodName = value;
@@ -21,13 +23,12 @@ export class NewMealService {
       case 'maxMeals':
         this.maxMeals = value;
         break;
+      case 'addDetail':
+        this.details.push(this.newDetail);
+        this.newDetail = '';
+        break;
       default:
         return;
     }
-  }
-
-  addDetail() {
-    this.details.push(this.newDetail);
-    this.newDetail = '';
   }
 }

@@ -13,10 +13,8 @@ export class NewMealComponent implements OnInit {
   constructor(public newMealService: NewMealService) {}
 
   updateInformation(event: any) {
-    this.newMealService.updateInformation(
-      event.target.name,
-      event.target.value
-    );
+    this.newMealService.updateInformation(event);
   }
+
   ngOnInit(): void {}
 }
