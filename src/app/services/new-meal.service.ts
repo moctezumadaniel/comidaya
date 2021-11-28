@@ -24,8 +24,21 @@ export class NewMealService {
         this.maxMeals = value;
         break;
       case 'addDetail':
-        this.details.push(this.newDetail);
-        this.newDetail = '';
+        if (this.newDetail !== '') {
+          this.details.push(this.newDetail);
+          this.newDetail = '';
+        }
+        break;
+      case 'deleteDetail':
+        if (this.details.length > 1) {
+          this.details.splice(event.target.id, 1);
+        } else {
+          this.details = [];
+        }
+        break;
+      case 'newDetailAdded':
+        this.details[event.target.id] = value;
+        console.log(this);
         break;
       default:
         return;

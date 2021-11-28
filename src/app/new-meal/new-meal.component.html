@@ -26,6 +26,7 @@
           *ngFor="let detail of newMealService.details; let i = index"
         >
           <input
+            [id]="i"
             type="text"
             class="NewDetail"
             name="newDetailAdded"
@@ -37,7 +38,9 @@
             [id]="i"
             type="button"
             class="SubmitNewDetail"
+            name="deleteDetail"
             value="Borrar"
+            (click)="updateInformation($event)"
           />
         </div>
         <div class="NewIngredientContainer">
