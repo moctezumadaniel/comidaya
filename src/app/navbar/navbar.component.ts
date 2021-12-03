@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private store: Store<{ navbar: { search: String } }>,
     private mainMenuService: MainMenuService,
-    private searchService: SearchService
+    public searchService: SearchService
   ) {}
   ngOnInit() {
     this.search = this.searchService.search;
@@ -24,6 +24,9 @@ export class NavbarComponent implements OnInit {
   }
   changeSearch(event: any) {
     this.searchService.updateSearch(event.target.value);
+  }
+  changeTypeOfSearch() {
+    this.searchService.changeTypeOfSearch();
   }
   logSearch() {
     console.log(this.searchService.search);

@@ -11,13 +11,12 @@
     <input
       class="Search"
       type="search"
-      placeholder="Buscar recetas o comidas"
+      [placeholder]="searchService.searchPlaceholder"
       (change)="changeSearch($event)"
       (search)="logSearch()"
     />
-    <button (click)="logSearch()" class="SearchType">
-      <!-- <mat-icon>fastfood</mat-icon> -->
-      <mat-icon>list_alt</mat-icon>
+    <button (click)="changeTypeOfSearch()" class="SearchType" type="button">
+      <mat-icon>{{ searchService.changeTypeOfSearchIcon }}</mat-icon>
     </button>
   </div>
 </nav>
