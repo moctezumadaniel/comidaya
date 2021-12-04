@@ -19,6 +19,17 @@
     </div>
 
     <div>
+      <div class="Name">Descripción</div>
+      <textarea
+        class="FoodDescription"
+        name="foodDescription"
+        [value]="newMealService.foodDescription"
+        (change)="updateInformation($event)"
+        [placeholder]="mealDescriptionPlaceholder"
+      ></textarea>
+    </div>
+
+    <div>
       <div class="Title">Detalles</div>
       <form class="Ingredients">
         <div

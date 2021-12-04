@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 export class NewRecipeService {
   images: any;
   recipeName: string = '';
+  recipeDescription: string = '';
   ingredients: string[] = [];
   instructions: string = '';
   newIngredient: string = '';
@@ -14,6 +15,10 @@ export class NewRecipeService {
   }
   changeRecipeName(event: any) {
     this.recipeName = event.target.value;
+  }
+
+  changeRecipeDescription(event: any) {
+    this.recipeDescription = event.target.value;
   }
   addIngredient() {
     if (this.newIngredient !== '') {

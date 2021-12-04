@@ -18,6 +18,17 @@
     </div>
 
     <div>
+      <div class="Name">Descripción</div>
+      <textarea
+        class="RecipeDescription"
+        name="recipeDescription"
+        (change)="changeRecipeDescription($event)"
+        [placeholder]="recipeDescriptionPlaceholder"
+        [value]="newRecipeService.recipeDescription"
+      ></textarea>
+    </div>
+
+    <div>
       <div class="Title">Ingredientes</div>
       <form class="Ingredients">
         <div

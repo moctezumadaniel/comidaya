@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class NewMealService {
   // images
   foodName: string = '';
+  foodDescription: string = '';
   details: string[] = [];
   newDetail: string = '';
   maxMeals: string = '';
@@ -16,6 +17,9 @@ export class NewMealService {
     switch (name) {
       case 'foodName':
         this.foodName = value;
+        break;
+      case 'foodDescription':
+        this.foodDescription = value;
         break;
       case 'newDetail':
         this.newDetail = value;
