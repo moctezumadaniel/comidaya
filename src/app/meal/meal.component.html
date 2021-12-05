@@ -21,9 +21,9 @@
   </div>
 
   <div class="ConfirmOrderContainer">
-    <button class="ChangeAmounth">-</button>
-    <span class="Amounth">10</span>
-    <button class="ChangeAmounth">+</button>
+    <button (click)="decrease()" class="ChangeAmounth">-</button>
+    <div class="Amounth">{{ amounth }}</div>
+    <button (click)="increment()" class="ChangeAmounth">+</button>
     <button class="OrderButton">Agregar</button>
   </div>
 </div>
