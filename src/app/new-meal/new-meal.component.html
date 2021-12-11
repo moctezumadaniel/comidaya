@@ -37,16 +37,16 @@
           *ngFor="let detail of newMealService.details; let i = index"
         >
           <input
-            [id]="i"
+            [id]="detail.id"
             type="text"
             class="NewDetail"
             name="newDetailAdded"
-            [value]="newMealService.details[i]"
+            [value]="detail.description"
             (change)="updateInformation($event)"
             [placeholder]="newDetailPlaceholder"
           />
           <input
-            [id]="i"
+            [id]="detail.id"
             type="button"
             class="SubmitNewDetail"
             name="deleteDetail"
@@ -59,7 +59,7 @@
             type="text"
             class="NewDetail"
             name="newDetail"
-            [value]="newMealService.newDetail"
+            [value]="newMealService.newDetail.description"
             (change)="updateInformation($event)"
             [placeholder]="newDetailPlaceholder"
           />

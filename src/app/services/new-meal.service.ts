@@ -7,8 +7,8 @@ export class NewMealService {
   // images
   foodName: string = '';
   foodDescription: string = '';
-  details: string[] = [];
-  newDetail: string = '';
+  details: { description: string; id: number }[] = [];
+  newDetail: { description: string; id: number } = { description: '', id: 1 };
   maxMeals: string = '';
 
   updateInformation(event: any) {
@@ -22,27 +22,31 @@ export class NewMealService {
         this.foodDescription = value;
         break;
       case 'newDetail':
-        this.newDetail = value;
+        this.newDetail.description = value;
         break;
       case 'maxMeals':
         this.maxMeals = value;
         break;
       case 'addDetail':
-        if (this.newDetail !== '') {
-          this.details.push(this.newDetail);
-          this.newDetail = '';
+        if (this.newDetail.description !== '') {
+          this.details.push({ ...this.newDetail });
+          this.newDetail.description = '';
+          this.newDetail.id++;
+          console.log(this);
         }
         break;
       case 'deleteDetail':
-        if (this.details.length > 1) {
-          this.details.splice(event.target.id, 1);
-        } else {
-          this.details = [];
-        }
+        this.details = this.details.filter(
+          (item) => item.id !== +event.target.id
+        );
         break;
       case 'newDetailAdded':
-        this.details[event.target.id] = value;
-        console.log(this);
+        this.details = this.details.map((item) => {
+          if (item.id === +event.target.id) {
+            return { ...item, description: event.target.value };
+          }
+          return item;
+        });
         break;
       default:
         return;
