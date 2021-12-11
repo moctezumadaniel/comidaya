@@ -6,9 +6,12 @@ export class NewRecipeService {
   images: any;
   recipeName: string = '';
   recipeDescription: string = '';
-  ingredients: string[] = [];
+  ingredients: { description: string; id: number }[] = [];
   instructions: string = '';
-  newIngredient: string = '';
+  newIngredient: { description: string; id: number } = {
+    description: '',
+    id: 1,
+  };
 
   changeImages() {
     console.log('Cambio de images');
@@ -21,27 +24,28 @@ export class NewRecipeService {
     this.recipeDescription = event.target.value;
   }
   addIngredient() {
-    if (this.newIngredient !== '') {
-      this.ingredients.push(this.newIngredient);
-      this.newIngredient = '';
+    if (this.newIngredient.description !== '') {
+      this.ingredients.push({ ...this.newIngredient });
+      this.newIngredient.description = '';
+      this.newIngredient.id++;
     }
   }
   changeNewIngredient(event: any) {
-    this.newIngredient = event.target.value;
+    this.newIngredient.description = event.target.value;
   }
   deleteIngredient(event: any) {
     const key = event.target.id;
-    if (this.ingredients.length > 1) {
-      this.ingredients.splice(key, 1);
-    } else {
-      this.ingredients = [];
-    }
-    console.log(this);
+    this.ingredients = this.ingredients.filter((item) => item.id !== +key);
   }
 
   changeIngredient(event: any) {
     const key = event.target.id;
-    this.ingredients[key] = event.target.value;
+    this.ingredients.map((item) => {
+      if (item.id === +key) {
+        return { ...item, description: event.target.value };
+      }
+      return item;
+    });
   }
   changeInstructions(event: any) {
     this.instructions = event.target.value;

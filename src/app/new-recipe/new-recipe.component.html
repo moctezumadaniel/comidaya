@@ -36,14 +36,14 @@
           class="NewIngredientContainer"
         >
           <input
-            [id]="i"
+            [id]="ingredient.id"
             class="NewIngredient"
             type="text"
-            [value]="newRecipeService.ingredients[i]"
+            [value]="ingredient.description"
             (change)="changeIngredient($event)"
           />
           <input
-            [id]="i"
+            [id]="ingredient.id"
             type="button"
             class="SubmitNewIngredient"
             value="Borrar"
@@ -57,7 +57,7 @@
             name="newIngredient"
             (change)="changeNewIngredient($event)"
             [placeholder]="newIngredientPlaceholder"
-            [value]="newRecipeService.newIngredient"
+            [value]="newRecipeService.newIngredient.description"
           />
           <input
             type="button"
