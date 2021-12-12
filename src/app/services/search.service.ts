@@ -32,4 +32,17 @@ export class SearchService {
       this.changeTypeOfSearchIcon = 'fastfood';
     }
   }
+  changeTypeToRecipes() {
+    this.searchType = 'recipes';
+    this.searchPlaceholder = 'Buscar recetas';
+    this.changeTypeOfSearchIcon = 'fastfood';
+    document.getElementById('Search')?.focus();
+  }
+
+  changeTypeToMeals() {
+    this.searchType = 'meals';
+    this.searchPlaceholder = 'Buscar comidas';
+    this.changeTypeOfSearchIcon = 'list_alt';
+    document.getElementById('Search')?.focus();
+  }
 }
