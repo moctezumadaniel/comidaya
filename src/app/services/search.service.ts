@@ -23,13 +23,9 @@ export class SearchService {
 
   changeTypeOfSearch() {
     if (this.searchType === 'recipes') {
-      this.searchType = 'meals';
-      this.searchPlaceholder = 'Buscar comidas';
-      this.changeTypeOfSearchIcon = 'list_alt';
+      this.changeTypeToMeals();
     } else {
-      this.searchType = 'recipes';
-      this.searchPlaceholder = 'Buscar recetas';
-      this.changeTypeOfSearchIcon = 'fastfood';
+      this.changeTypeToRecipes();
     }
   }
   changeTypeToRecipes() {
