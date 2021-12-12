@@ -29,6 +29,7 @@ export class NewRecipeService {
       this.newIngredient.description = '';
       this.newIngredient.id++;
     }
+    document.getElementById('NewIngredient')?.focus();
   }
   changeNewIngredient(event: any) {
     this.newIngredient.description = event.target.value;
@@ -36,6 +37,7 @@ export class NewRecipeService {
   deleteIngredient(event: any) {
     const key = event.target.id;
     this.ingredients = this.ingredients.filter((item) => item.id !== +key);
+    document.getElementById('NewIngredient')?.focus();
   }
 
   changeIngredient(event: any) {

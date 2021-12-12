@@ -34,11 +34,13 @@ export class NewMealService {
           this.newDetail.id++;
           console.log(this);
         }
+        document.getElementById('NewDetail')?.focus();
         break;
       case 'deleteDetail':
         this.details = this.details.filter(
           (item) => item.id !== +event.target.id
         );
+        document.getElementById('NewDetail')?.focus();
         break;
       case 'newDetailAdded':
         this.details = this.details.map((item) => {
