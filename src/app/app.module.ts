@@ -24,6 +24,8 @@ import { FavoriteRecipesComponent } from './favorite-recipes/favorite-recipes.co
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { StoreModule } from '@ngrx/store';
 import { navbarReducer } from 'src/redux/reducers/navbar.reducer';
+import { MyRecipesComponent } from './my-recipes/my-recipes.component';
+import { MyMealsComponent } from './my-meals/my-meals.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecommendationsComponent },
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
   { path: 'receta', component: RecipeComponent },
   { path: 'recetas', component: RecipeListComponent },
   { path: 'recetas-favoritas', component: FavoriteRecipesComponent },
+  { path: 'mis-recetas', component: MyRecipesComponent },
   {
     path: 'nueva-comida',
     loadChildren: () =>
@@ -43,6 +46,7 @@ const appRoutes: Routes = [
   { path: 'comida', component: MealComponent },
   { path: 'comidas', component: MealListComponent },
   { path: 'comidas-favoritas', component: FavoriteMealsComponent },
+  { path: 'mis-comidas', component: MyMealsComponent },
   {
     path: 'perfil',
     loadChildren: () =>
@@ -64,6 +68,8 @@ const appRoutes: Routes = [
     MealListComponent,
     FavoriteRecipesComponent,
     RecommendationsComponent,
+    MyRecipesComponent,
+    MyMealsComponent,
   ],
   imports: [
     BrowserModule,
