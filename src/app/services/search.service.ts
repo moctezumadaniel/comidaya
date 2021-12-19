@@ -32,6 +32,7 @@ export class SearchService {
     this.searchType = 'recipes';
     this.searchPlaceholder = 'Buscar recetas';
     this.changeTypeOfSearchIcon = 'fastfood';
+    this.search = '';
     document.getElementById('Search')?.focus();
   }
 
@@ -39,6 +40,7 @@ export class SearchService {
     this.searchType = 'meals';
     this.searchPlaceholder = 'Buscar comidas';
     this.changeTypeOfSearchIcon = 'list_alt';
+    this.search = '';
     document.getElementById('Search')?.focus();
   }
 }

@@ -12,6 +12,7 @@
       id="Search"
       class="Search"
       type="search"
+      [value]="searchService.search"
       [placeholder]="searchService.searchPlaceholder"
       (change)="changeSearch($event)"
       (search)="logSearch()"
