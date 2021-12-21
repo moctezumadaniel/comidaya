@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   tradenamePlaceholder: string = 'Nombre de tu negocio';
   businessAddressPlaceholder: string = 'Dirección de donde enviaras tu comida';
   oldPasswordPlaceholder: string = 'Contraseña anterior';
-  newPasswordPlaceholder: string = 'Nueva contrasela';
+  newPasswordPlaceholder: string = 'Nueva contraseña';
   confirmNewPasswordPlaceholder: string = 'Confirmar nueva contraseña';
 
   userName: string = '';
