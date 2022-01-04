@@ -36,4 +36,8 @@ export class MealComponent implements OnInit {
       this.amounth = 1;
     }
   }
+
+  reset() {
+    this.amounth = 1;
+  }
 }
