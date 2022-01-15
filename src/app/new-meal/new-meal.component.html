@@ -4,7 +4,11 @@
   <div class="MealContainer">
     <div class="FoodImageContainer">
       <img [src]="newMealService.image" class="FoodImage" />
-      <label class="AddFoodImage" for="addFoodImage">
+      <label
+        *ngIf="!newMealService.image"
+        class="AddFoodImage"
+        for="addFoodImage"
+      >
         <input
           id="addFoodImage"
           name="foodImage"
@@ -15,7 +19,11 @@
         />Agregar Imágen
       </label>
 
-      <label class="ChangeFoodImage" for="changeFoodImage">
+      <label
+        *ngIf="newMealService.image"
+        class="ChangeFoodImage"
+        for="changeFoodImage"
+      >
         <input
           id="changeFoodImage"
           name="foodImage"
