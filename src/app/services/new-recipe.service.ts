@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NewRecipeService {
-  images: any;
+  image: any = null;
   recipeName: string = '';
   recipeDescription: string = '';
   ingredients: { description: string; id: number }[] = [];
@@ -13,9 +13,6 @@ export class NewRecipeService {
     id: 1,
   };
 
-  changeImages() {
-    console.log('Cambio de images');
-  }
   changeRecipeName(event: any) {
     this.recipeName = event.target.value;
   }
@@ -52,5 +49,9 @@ export class NewRecipeService {
   changeInstructions(event: any) {
     this.instructions = event.target.value;
     console.log(this);
+  }
+
+  changeImage(event: any) {
+    this.image = event.target.result;
   }
 }

@@ -2,8 +2,17 @@
   <div class="MainTitle">Nueva Receta</div>
   <div class="RecipeContainer">
     <div class="FoodImageContainer">
-      <img src="" class="FoodImage" />
-      <button class="AddFoodImage">Agregar Imagen</button>
+      <img [src]="newRecipeService.image" class="FoodImage" />
+      <label for="addImage" class="AddFoodImage">
+        <input
+          type="file"
+          accept="image/jpg, image/jpeg"
+          id="addImage"
+          class="AddFoodImageHiden"
+          (change)="changeImage($event)"
+        />
+        Agregar Imágen
+      </label>
       <button class="ChangeFoodImage">Cambiar Imagen</button>
     </div>
     <div>

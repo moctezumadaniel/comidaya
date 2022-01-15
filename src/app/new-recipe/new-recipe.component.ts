@@ -13,8 +13,13 @@ export class NewRecipeComponent implements OnInit {
   newIngredientPlaceholder: string = 'Escribe un nuevo ingrediente';
   instructionsPlaceholder: string = 'Escribe las instrucciones de la receta';
 
-  changeImages() {
-    console.log('Cambio de images');
+  changeImage(event: any) {
+    if (!event.target.files || !event.target.files[0]) return;
+    const reader: FileReader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onloadend = (e: ProgressEvent<FileReader>): void => {
+      this.newRecipeService.changeImage(e);
+    };
   }
   changeRecipeName(event: any) {
     this.newRecipeService.changeRecipeName(event);
