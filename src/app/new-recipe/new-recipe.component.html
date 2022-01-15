@@ -3,7 +3,11 @@
   <div class="RecipeContainer">
     <div class="FoodImageContainer">
       <img [src]="newRecipeService.image" class="FoodImage" />
-      <label for="addImage" class="AddFoodImage">
+      <label
+        *ngIf="!newRecipeService.image"
+        for="addImage"
+        class="AddFoodImage"
+      >
         <input
           type="file"
           accept="image/jpg, image/jpeg"
@@ -13,7 +17,21 @@
         />
         Agregar Imágen
       </label>
-      <button class="ChangeFoodImage">Cambiar Imagen</button>
+
+      <label
+        *ngIf="newRecipeService.image"
+        for="changeImage"
+        class="ChangeFoodImage"
+      >
+        <input
+          type="file"
+          accept="image/jpg, image/jpeg"
+          id="changeImage"
+          (change)="changeImage($event)"
+          class="ChangeFoodImageHiden"
+        />
+        Cambiar Imagen
+      </label>
     </div>
     <div>
       <div class="Name">Nombre de la receta</div>

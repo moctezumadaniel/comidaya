@@ -40,13 +40,13 @@
     border: none
     border-radius: 5px
     cursor: pointer
-    
+    text-align: center
     justify-content: center
     align-items: center
 
     &:focus-within
         outline-style: solid
-        outline-offset: 3px
+        outline-offset: 2px
         outline-width: 2px
         outline-color: #1978f0
 
@@ -55,6 +55,7 @@
     left: -9999rem
 
 .ChangeFoodImage
+    display: flex
     font-family: Roboto, sans-serif
     font-size: large
     background-color: #000
@@ -68,7 +69,19 @@
     outline-offset: 3px
     outline-width: 3px
     outline-color: #000
+    justify-content: center
+    align-items: center
+    text-align: center
 
+    &:focus-within
+        outline-style: solid
+        outline-offset: 2px
+        outline-width: 2px
+        outline-color: #000
+
+.ChangeFoodImageHiden
+    position: absolute
+    left: -9999rem
 
 .Name
     font-size: 20px
