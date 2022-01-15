@@ -3,9 +3,28 @@
 
   <div class="MealContainer">
     <div class="FoodImageContainer">
-      <img src="" class="FoodImage" />
-      <button class="AddFoodImage">Agregar Imágen</button>
-      <button class="ChangeFoodImage">Cambiar Imágen</button>
+      <img [src]="newMealService.image" class="FoodImage" />
+      <label class="AddFoodImage" for="addFoodImage">
+        <input
+          id="addFoodImage"
+          name="foodImage"
+          class="AddFoodImageHiden"
+          type="file"
+          accept="image/jpg, image/jpeg"
+          (change)="updateInformation($event)"
+        />Agregar Imágen
+      </label>
+
+      <label class="ChangeFoodImage" for="changeFoodImage">
+        <input
+          id="changeFoodImage"
+          name="foodImage"
+          class="AddFoodImageHiden"
+          type="file"
+          accept="image/jpg, image/jpeg"
+          (change)="updateInformation($event)"
+        />Cambiar Imágen
+      </label>
     </div>
     <div>
       <div class="Name">Nombre de la comida</div>

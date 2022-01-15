@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NewMealService {
-  // images
+  image: any = null;
   foodName: string = '';
   foodDescription: string = '';
   details: { description: string; id: number }[] = [];
@@ -15,6 +15,14 @@ export class NewMealService {
     const name = event.target.name;
     const value = event.target.value;
     switch (name) {
+      case 'foodImage':
+        if (!event.target.files || !event.target.files[0]) return;
+        const reader: FileReader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onloadend = (e) => {
+          this.image = e.target?.result;
+        };
+        break;
       case 'foodName':
         this.foodName = value;
         break;

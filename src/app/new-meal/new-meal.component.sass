@@ -26,6 +26,7 @@
     height: 250px
 
 .AddFoodImage
+    display: flex
     font-family: Roboto, sans-serif
     font-size: large
     background-color: #1978f0
@@ -36,11 +37,23 @@
     border: none
     border-radius: 5px
     cursor: pointer
-    outline-offset: 3px
-    outline-width: 3px
-    outline-color: #1978f0
+    justify-content: center
+    align-items: center
+    text-align: center
+    
+
+    &:focus-within
+        outline-style: solid
+        outline-offset: 2px
+        outline-width: 2px
+        outline-color: #1978f0
+
+.AddFoodImageHiden
+    position: absolute
+    left: -9999rem
 
 .ChangeFoodImage
+    display: flex
     font-family: Roboto, sans-serif
     font-size: large
     background-color: #000
@@ -54,6 +67,15 @@
     outline-offset: 3px
     outline-width: 3px
     outline-color: #000
+    justify-content: center
+    align-items: center
+    text-align: center
+
+    &:focus-within
+        outline-style: solid
+        outline-offset: 2px
+        outline-width: 2px
+        outline-color: #000
 
 .Name
     font-size: 20px
