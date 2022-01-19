@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseStorage } from '../services/firebase-uploads.service';
 import { NewMealService } from '../services/new-meal.service';
 
 @Component({
@@ -11,11 +12,19 @@ export class NewMealComponent implements OnInit {
   mealDescriptionPlaceholder: string = 'Escribe la descripción de tu comida';
   newDetailPlaceholder: string = 'Detalle que el cliente puede elegir';
   maximumAmounthPlaceholder: string = 'Órdenes máximas por día';
-  constructor(public newMealService: NewMealService) {}
+  constructor(
+    public newMealService: NewMealService,
+    public firebaseStorage: FirebaseStorage
+  ) {}
 
   updateInformation(event: any) {
     this.newMealService.updateInformation(event);
   }
-
+  uploadImage() {
+    this.firebaseStorage.uploadImage(
+      this.newMealService.image,
+      this.newMealService.imageName
+    );
+  }
   ngOnInit(): void {}
 }
