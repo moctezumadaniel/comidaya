@@ -4,16 +4,6 @@
 
 export const environment = {
   production: false,
-  firebaseConfig: {
-    apiKey: 'AIzaSyBs2UkbgSQ8viIL3bEIGzf1zIqjFr1GTKQ',
-    authDomain: 'comidaya-37af5.firebaseapp.com',
-    databaseURL: 'https://comidaya-37af5-default-rtdb.firebaseio.com',
-    projectId: 'comidaya-37af5',
-    storageBucket: 'comidaya-37af5.appspot.com',
-    messagingSenderId: '190571544120',
-    appId: '1:190571544120:web:58a038b0492cf5ecbab0cd',
-    measurementId: 'G-MFQPF43WNX',
-  },
 };
 
 /*

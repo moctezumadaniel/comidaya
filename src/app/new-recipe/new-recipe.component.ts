@@ -21,27 +21,11 @@ export class NewRecipeComponent implements OnInit {
       this.newRecipeService.changeImage(e);
     };
   }
-  changeRecipeName(event: any) {
-    this.newRecipeService.changeRecipeName(event);
+
+  updateInformation(event: any): void {
+    this.newRecipeService.updateInformation(event);
   }
-  changeRecipeDescription(event: any) {
-    this.newRecipeService.changeRecipeDescription(event);
-  }
-  addIngredient() {
-    this.newRecipeService.addIngredient();
-  }
-  changeNewIngredient(event: any) {
-    this.newRecipeService.changeNewIngredient(event);
-  }
-  deleteIngredient(event: any) {
-    this.newRecipeService.deleteIngredient(event);
-  }
-  changeIngredient(event: any) {
-    this.newRecipeService.changeIngredient(event);
-  }
-  changeInstructions(event: any) {
-    this.newRecipeService.changeInstructions(event);
-  }
+
   saveRecipe() {
     console.log('Receta guardada');
   }

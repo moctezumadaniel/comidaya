@@ -13,42 +13,45 @@ export class NewRecipeService {
     id: 1,
   };
 
-  changeRecipeName(event: any) {
-    this.recipeName = event.target.value;
-  }
+  updateInformation(event: any) {
+    const key = event.target.id;
 
-  changeRecipeDescription(event: any) {
-    this.recipeDescription = event.target.value;
-  }
-  addIngredient() {
-    if (this.newIngredient.description !== '') {
-      this.ingredients.push({ ...this.newIngredient });
-      this.newIngredient.description = '';
-      this.newIngredient.id++;
+    switch (event.target.name) {
+      case 'recipeName':
+        this.recipeName = event.target.value;
+        break;
+      case 'recipeDescription':
+        this.recipeDescription = event.target.value;
+        break;
+      case 'newRecipeIngredient':
+        if (this.newIngredient.description !== '') {
+          this.ingredients.push({ ...this.newIngredient });
+          this.newIngredient.description = '';
+          this.newIngredient.id++;
+        }
+        document.getElementById('NewIngredient')?.focus();
+        break;
+      case 'newIngredient':
+        this.newIngredient.description = event.target.value;
+        break;
+      case 'deleteIngredient':
+        this.ingredients = this.ingredients.filter((item) => item.id !== +key);
+        document.getElementById('NewIngredient')?.focus();
+        break;
+      case 'ingredient':
+        this.ingredients.map((item) => {
+          if (item.id === +key) {
+            return { ...item, description: event.target.value };
+          }
+          return item;
+        });
+        break;
+      case 'instructions':
+        this.instructions = event.target.value;
+        break;
+      default:
+        return;
     }
-    document.getElementById('NewIngredient')?.focus();
-  }
-  changeNewIngredient(event: any) {
-    this.newIngredient.description = event.target.value;
-  }
-  deleteIngredient(event: any) {
-    const key = event.target.id;
-    this.ingredients = this.ingredients.filter((item) => item.id !== +key);
-    document.getElementById('NewIngredient')?.focus();
-  }
-
-  changeIngredient(event: any) {
-    const key = event.target.id;
-    this.ingredients.map((item) => {
-      if (item.id === +key) {
-        return { ...item, description: event.target.value };
-      }
-      return item;
-    });
-  }
-  changeInstructions(event: any) {
-    this.instructions = event.target.value;
-    console.log(this);
   }
 
   changeImage(event: any) {

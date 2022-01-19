@@ -38,7 +38,7 @@
       <textarea
         class="Description"
         name="recipeName"
-        (change)="changeRecipeName($event)"
+        (change)="updateInformation($event)"
         [placeholder]="recipeNamePlaceholder"
         [value]="newRecipeService.recipeName"
       ></textarea>
@@ -49,7 +49,7 @@
       <textarea
         class="RecipeDescription"
         name="recipeDescription"
-        (change)="changeRecipeDescription($event)"
+        (change)="updateInformation($event)"
         [placeholder]="recipeDescriptionPlaceholder"
         [value]="newRecipeService.recipeDescription"
       ></textarea>
@@ -66,15 +66,17 @@
             [id]="ingredient.id"
             class="NewIngredient"
             type="text"
+            name="ingredient"
             [value]="ingredient.description"
-            (change)="changeIngredient($event)"
+            (change)="updateInformation($event)"
           />
           <input
             [id]="ingredient.id"
             type="button"
             class="SubmitNewIngredient"
             value="Borrar"
-            (click)="deleteIngredient($event)"
+            name="deleteIngredient"
+            (click)="updateInformation($event)"
           />
         </div>
         <div class="NewIngredientContainer">
@@ -83,7 +85,7 @@
             id="NewIngredient"
             class="NewIngredient"
             name="newIngredient"
-            (change)="changeNewIngredient($event)"
+            (change)="updateInformation($event)"
             [placeholder]="newIngredientPlaceholder"
             [value]="newRecipeService.newIngredient.description"
           />
@@ -91,7 +93,8 @@
             type="button"
             class="SubmitNewIngredient"
             value="Agregar"
-            (click)="addIngredient()"
+            name="newRecipeIngredient"
+            (click)="updateInformation($event)"
           />
         </div>
       </form>
@@ -102,7 +105,7 @@
       <textarea
         class="Instructions"
         name="instructions"
-        (change)="changeInstructions($event)"
+        (change)="updateInformation($event)"
         [placeholder]="instructionsPlaceholder"
         [value]="newRecipeService.instructions"
       ></textarea>
