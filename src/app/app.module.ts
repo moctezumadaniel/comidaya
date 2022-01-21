@@ -26,6 +26,7 @@ import { StoreModule } from '@ngrx/store';
 import { navbarReducer } from 'src/redux/reducers/navbar.reducer';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { MyMealsComponent } from './my-meals/my-meals.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecommendationsComponent },
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
       import('./profile/profile.module').then((m) => m.ProfileModule),
   },
   { path: 'menu', component: MainMenuComponent },
+  { path: 'iniciar-sesion', component: LoginComponent },
 ];
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ const appRoutes: Routes = [
     RecommendationsComponent,
     MyRecipesComponent,
     MyMealsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
