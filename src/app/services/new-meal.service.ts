@@ -24,6 +24,7 @@ export class NewMealService {
         reader.onloadend = (e) => {
           this.image = e.target?.result;
           this.imageName = event.target.files[0].name;
+          console.log(this);
         };
         break;
       case 'foodName':

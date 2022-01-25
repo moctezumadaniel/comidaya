@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import FirebaseAuth from '../services/firebase-auth.service';
 import { MainMenuService } from '../services/mainMenu.service';
 import { SearchService } from '../services/search.service';
 
@@ -10,7 +11,8 @@ import { SearchService } from '../services/search.service';
 export class MainMenuComponent implements OnInit {
   constructor(
     private mainMenu: MainMenuService,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private firebaseAuth: FirebaseAuth
   ) {}
   closeMenu() {
     this.mainMenu.closeMenu();
@@ -22,6 +24,11 @@ export class MainMenuComponent implements OnInit {
 
   changeToMeals() {
     this.searchService.changeTypeToMeals();
+  }
+
+  goToSignIn(event: any) {
+    event.preventDefault();
+    this.firebaseAuth.signIn();
   }
   ngOnInit(): void {}
 }
