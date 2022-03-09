@@ -27,6 +27,7 @@ import { navbarReducer } from 'src/redux/reducers/navbar.reducer';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { MyMealsComponent } from './my-meals/my-meals.component';
 import { LoginComponent } from './login/login.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 const appRoutes: Routes = [
   { path: '', component: RecommendationsComponent },
@@ -75,6 +76,10 @@ const appRoutes: Routes = [
     LoginComponent,
   ],
   imports: [
+    AuthModule.forRoot({
+      domain: 'dev-006imb0h.us.auth0.com',
+      clientId: 'tHqMVu0OIicHyHQ14wBQ9r8QnB0E0X3L',
+    }),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

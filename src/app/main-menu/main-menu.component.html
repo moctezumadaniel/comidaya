@@ -34,8 +34,12 @@
       <li class="Route">
         <a routerLink="/perfil">Perfil y configuración</a>
       </li>
-      <li class="Route">
-        <a href="" (click)="goToSignIn($event)">Iniciar sesión</a>
+      <li class="Route" *ngIf="!logged && !loadingUser">
+        <a href="" (click)="auth.loginWithRedirect()">Iniciar sesión</a>
+      </li>
+
+      <li class="Route" *ngIf="logged && !loadingUser">
+        <a href="" (click)="auth.logout()">Cerrar sesión</a>
       </li>
     </ul>
   </div>
