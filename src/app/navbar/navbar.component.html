@@ -21,4 +21,12 @@
       <mat-icon>{{ searchService.changeTypeOfSearchIcon }}</mat-icon>
     </button>
   </div>
+  <button
+    *ngIf="!userLogged && !loadingUser"
+    (click)="auth.loginWithRedirect()"
+    type="button"
+    class="Login"
+  >
+    Iniciar sesión
+  </button>
 </nav>
