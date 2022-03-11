@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit {
   }
   openMenu() {
     this.mainMenuService.openMenu();
+    document.getElementById('body')!.style.overflowY = 'hidden';
   }
   changeSearch(event: any) {
     this.searchService.updateSearch(event.target.value);

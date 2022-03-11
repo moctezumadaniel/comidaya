@@ -29,6 +29,7 @@ export class MainMenuComponent implements OnInit {
 
   closeMenu() {
     this.mainMenu.closeMenu();
+    document.getElementById('body')!.style.overflowY = 'auto';
   }
 
   changeToRecipes() {
