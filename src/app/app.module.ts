@@ -27,7 +27,7 @@ import { navbarReducer } from 'src/redux/reducers/navbar.reducer';
 import { MyRecipesComponent } from './my-recipes/my-recipes.component';
 import { MyMealsComponent } from './my-meals/my-meals.component';
 import { LoginComponent } from './login/login.component';
-import { AuthModule } from '@auth0/auth0-angular';
+import { AuthGuard, AuthModule } from '@auth0/auth0-angular';
 
 const appRoutes: Routes = [
   { path: '', component: RecommendationsComponent },
@@ -35,24 +35,43 @@ const appRoutes: Routes = [
     path: 'nueva-receta',
     loadChildren: () =>
       import('./new-recipe/new-recipe.module').then((m) => m.NewRecipeModule),
+    canActivate: [AuthGuard],
   },
   { path: 'receta', component: RecipeComponent },
   { path: 'recetas', component: RecipeListComponent },
-  { path: 'recetas-favoritas', component: FavoriteRecipesComponent },
-  { path: 'mis-recetas', component: MyRecipesComponent },
+  {
+    path: 'recetas-favoritas',
+    component: FavoriteRecipesComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'mis-recetas',
+    component: MyRecipesComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'nueva-comida',
     loadChildren: () =>
       import('./new-meal/new-meal.module').then((m) => m.NewMealModule),
+    canActivate: [AuthGuard],
   },
   { path: 'comida', component: MealComponent },
   { path: 'comidas', component: MealListComponent },
-  { path: 'comidas-favoritas', component: FavoriteMealsComponent },
-  { path: 'mis-comidas', component: MyMealsComponent },
+  {
+    path: 'comidas-favoritas',
+    component: FavoriteMealsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'mis-comidas',
+    component: MyMealsComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'perfil',
     loadChildren: () =>
       import('./profile/profile.module').then((m) => m.ProfileModule),
+    canActivate: [AuthGuard],
   },
   { path: 'menu', component: MainMenuComponent },
   { path: 'iniciar-sesion', component: LoginComponent },
